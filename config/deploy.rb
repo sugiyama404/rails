@@ -14,7 +14,7 @@ set :deploy_to, "/var/www/#{fetch(:application)}"
 set :bundle_path, -> { shared_path.join('vendor/bundle') }
 
 # Set Gemfile
-set :bundle_gemfile,  "/var/www/myapp/current/Gemfile"
+set :bundle_gemfile,  "/var/www/sampleApp/current/Gemfile"
 # デフォルトで設定されている --deployment を消す
 set :bundle_flags, "--quiet"
 
