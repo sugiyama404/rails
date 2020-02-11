@@ -15,9 +15,8 @@ set :bundle_path, -> { shared_path.join('vendor/bundle') }
 
 # Set Gemfile
 set :bundle_gemfile,  "/var/www/sampleApp/current/Gemfile"
-# デフォルトで設定されている --deployment を消す
-set :bundle_flags, "--quiet"
-
+#nginx puma rails 環境で capistranoでdeployしていると上記エラーでdeployできなかったの対策
+set :rbenv_map_bins, %w(rake gem bundle ruby rails puma pumactl)
 
 
 namespace :deploy do

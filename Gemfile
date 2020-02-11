@@ -80,3 +80,11 @@ group :development do
 end
 # デプロイ先サーバのデプロイユーザでrbenvのbundleを使う設定。capistrano-rbenvを使う。
 gem 'capistrano-rbenv'
+
+#RailsAdminは、管理画面にアクセスする管理者の管理にDeviseを利用しています
+gem 'devise'
+#さて、ここからRailsAdminのインストールです
+gem 'rails_admin'
+#cancan
+gem 'cancan'
+

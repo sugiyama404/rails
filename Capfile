@@ -36,10 +36,6 @@ install_plugin Capistrano::SCM::Git
 
 # Load custom tasks from `lib/capistrano/tasks` if you have any defined
 
-require "capistrano/setup"
-require "capistrano/deploy"
-require "capistrano/scm/git"
-
 # デプロイ時にbundlerを起動
 require "capistrano/bundler"
 # デプロイ時にmigrationを実行
@@ -51,7 +47,5 @@ install_plugin Capistrano::Puma
 #デプロイ先サーバのデプロイユーザでrbenvのbundleを使う設定。capistrano-rbenvを使う。
 require "capistrano/rbenv"
 
-
-# install_plugin Capistrano::SCM::Git
 
 Dir.glob("lib/capistrano/tasks/*.rake").each { |r| import r }

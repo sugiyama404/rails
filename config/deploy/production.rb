@@ -61,7 +61,7 @@
 #   }
 
 
-server "54.248.56.95", user: "deploy", roles: %w{app db web}
+server "13.113.217.201", user: "deploy", roles: %w{app db web}
 
 set :ssh_options, {
   user: 'deploy',
