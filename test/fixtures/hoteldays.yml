@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  hotelid: 1
+  best: 1
+  rich: 1
+  fourth: 1
+  double: 1
+  days: 2020-02-16
+
+two:
+  hotelid: 1
+  best: 1
+  rich: 1
+  fourth: 1
+  double: 1
+  days: 2020-02-16

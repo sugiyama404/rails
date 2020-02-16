@@ -1,2 +1,21 @@
-<h1></h1>
-<p>user</p>
+<div class="row row-cols-1 row-cols-md-2">
+<% @hoteldays.each do |hotelday| %>
+
+    <div class="col mb-4">
+  <div class="card">
+  <h3 class="text-center">ホテル名: <%= hotelday.hotel.name %></h3>
+    <div class="card-body">
+    <%= image_tag '/images/noimg.png', class: 'card-img-top' %>
+    <div class="card-footer">
+    <p>残り部屋数</p>
+    <div>ゴージャススーイト:<%= hotelday.best %> 部屋</div>
+    <div>スイート:<%= hotelday.rich %> 部屋</div>
+    <div>マルチ:<%= hotelday.fourth %> 部屋</div>
+    <div>ダブル:<%= hotelday.double %> 部屋</div>
+    </div>
+  </div>
+ </div>
+ </div>
+
+  <% end %>
+  </div>
