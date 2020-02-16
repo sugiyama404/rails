@@ -5,7 +5,7 @@
   <div class="card">
   <h3 class="text-center">ホテル名: <%= hotelday.hotel.name %></h3>
     <div class="card-body">
-    <%= image_tag '/images/noimg.png', class: 'card-img-top' %>
+    <%= image_tag "/images/#{hotelday.hotel.name}.jpg", class: 'card-img-top' %>
     <div class="card-footer">
     <p>残り部屋数</p>
     <div>ゴージャススーイト:<%= hotelday.best %> 部屋</div>
