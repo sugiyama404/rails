@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   
   get '/users', to: 'users#user'
+  get '/users/:id/registor', to: 'users#registor'
 
 
 
