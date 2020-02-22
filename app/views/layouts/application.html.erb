@@ -22,7 +22,9 @@
   <body>
   <div class="alert alert-primary text-center" role="alert">
   minpa.com
-  <button  type="button" class="btn btn-outline-success float-right" onclick="history.back()">戻る</button>
+  <%= link_to  "/", class: 'btn btn-outline-success float-right' do %>
+  <span>検索へ戻る</span>
+<% end %>
 </div>
 
 <p class="notice"><%= notice %></p>

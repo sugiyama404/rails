@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   
   get '/users', to: 'users#user'
-  get '/users/:id/registor', to: 'users#registor'
+  get '/users/:id/login', to: 'login#login'
 
 
 
