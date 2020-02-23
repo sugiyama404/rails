@@ -1,5 +1,5 @@
 class LoginController < ApplicationController
-  before_action :set_user, only: [:reserved]
+  before_action :set_user, only: [:check]
 
 
   def login
@@ -11,7 +11,7 @@ class LoginController < ApplicationController
       redirect_to '/users/reserved'
     else
       flash.now[:danger] = t('.flash.invalid_password')
-      render 'new'
+      redirect_to '/users'
     end
   end
   def reserved
@@ -48,7 +48,7 @@ class LoginController < ApplicationController
     end
 
     # 許可するパラメータ
-    def session_params
+    def login_params
       params.require(:login).permit(:mail, :password)
     end
 end
