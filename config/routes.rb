@@ -13,7 +13,11 @@ Rails.application.routes.draw do
   
   get '/users', to: 'users#user'
   get '/users/:id/login', to: 'login#login'
-
-
+  post '/users/:id/login', to: 'login#check'
+  get '/users/reserved', to: 'login#reserved'
+  delete  '/users/logout',  to: 'login#destroy'
+  get '/users/reserved', to: 'login#reserved'
+  get '/users/signin', to: 'login#signin'
+  post '/users/create', to: 'login#create'
 
 end

@@ -1,35 +1,30 @@
 
 <div align="center" class="my-4">
-  <div class="card text-white bg-primary mb-3" style="max-width: 18rem;" align="center">
+  <div class="card text-white bg-primary mb-3" style="max-width: 25rem;" align="center">
   <div class="card-header">ログイン</div>
   <div class="card-body">
-    <p class="card-text">
+    <%= form_for :login, url: "/users/#{session[:hotel_id]}/login" do |f| %>
+  <div class="form-group row">
+  <%= f.label :mail, class:'col-sm-4' %>
+  <div class="col-sm-2">
+  <%= f.email_field :mail, class:'form_control' %>
+  </div>
+  </div>
+  <div class="form-group row">
+  <%= f.label :password, class:'col-sm-4' %>
+  <div class="col-sm-2">
+  <%= f.password_field :password, class:'form_control' %>
+  </div>
+   </div>
 
-    <table class="my-4">
-<tr>
-<td>
-<p>名前</p>
-</td>
-<td>
-<input type="text">
-</td>
-</tr>
-<tr>
-<td>
-<p>password</p>
-</td>
-<td>
-<input type="text">
-</td>
-</tr>
-
-  </table>
-
-  <p>アカウントをお持ちでない方は</p>
-  <p>sign in</p>
+     <p>アカウントをお持ちでない方は</p>
+  <p><%= link_to 'sign in', '/users/signin', { :class => "text-light"} %></p>
        <button type="button" class="btn btn-outline-light btn-lg" onClick="location.href='/users'">戻る</button>
-    <button type="button" class="btn btn-outline-light btn-lg" onClick="location.href='/users'">ログイン</button>
-    </p>
+    <%= f.submit "ログイン", class: "btn btn-outline-light btn-lg" %>
+    <% end %>
+
+
+    
   </div>
 </div>
 </div>

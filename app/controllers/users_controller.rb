@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def user
- #   @hoteldays = Hotelday.all
+    session[:hotel_id].clear
      @hoteldays = Hotelday.left_joins(:hotel)
   end
   def registor

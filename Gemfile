@@ -88,3 +88,9 @@ gem 'rails_admin'
 #cancan
 gem 'cancan'
 
+
+
+
+
+
+
