@@ -7,14 +7,19 @@ class LoginController < ApplicationController
   end
   def check
     if @guest.authenticate(login_params[:password])
-      sign_in(@guest)
+      sign_inhh(@guest)
       redirect_to '/users/reserved'
+ #      redirect_to action: :reserved
     else
       flash.now[:danger] = t('.flash.invalid_password')
       redirect_to '/users'
     end
   end
   def reserved
+    binding.pry
+    @hotels = Hotel.all
+
+    binding.pry
   end
   def destory
     sign_out

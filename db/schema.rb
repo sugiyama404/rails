@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_23_233045) do
+ActiveRecord::Schema.define(version: 2020_02_24_002342) do
 
   create_table "admin_users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -41,10 +41,22 @@ ActiveRecord::Schema.define(version: 2020_02_23_233045) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "hotelprices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "hotel_id"
+    t.integer "best"
+    t.integer "rich"
+    t.integer "fourth"
+    t.integer "double"
+    t.date "newday"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "hotels", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.string "mails"
     t.text "address"
+    t.string "imgname"
     t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
