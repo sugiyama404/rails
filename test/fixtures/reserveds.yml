@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  guest_id: 1
+  hotel_id: 1
+  room: MyString
+  guestnum: 1
+  Reservedday: 2020-02-29
+
+two:
+  guest_id: 1
+  hotel_id: 1
+  room: MyString
+  guestnum: 1
+  Reservedday: 2020-02-29

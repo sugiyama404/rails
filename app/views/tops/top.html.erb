@@ -4,204 +4,211 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-   <!-- Optional JavaScript -->
+    <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
     <%= stylesheet_link_tag 'tops', media: 'all','data-turbolinks-track' => true %>
-<title>Minpa.com</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-
-<script>
-  $(function() {
-    $("#datepicker1").datepicker();
-    $("#datepicker2").datepicker();
-  });
-  $(document).ready(function(){
-    $('body').scrollspy({target: ".navbar", offset: 50});
-});
-</script>
-    
+    <title>Minpa.com</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+      $(function() {
+        $("#datepicker1").datepicker();
+        $("#datepicker2").datepicker();
+      });
+      $(document).ready(function(){
+        $('body').scrollspy({target: ".navbar", offset: 50});
+      });
+    </script>
   </head>
   <body class="bodyA">
-
     <nav id="navbar-example2" class="navbar navbar-light bg-light fixed-top">
-  <a class="navbar-brand" href="#">Minpa.com</a>
-  <ul class="nav nav-pills">
-    <li class="nav-item  active">
-      <a class="nav-link" href="#fat">検索</a>
-    </li>
+      <a class="navbar-brand" href="#">Minpa.com</a>
+      <ul class="nav nav-pills">
         <li class="nav-item  active">
-      <a class="nav-link" href="#attribute">旅の魅力</a>
-    </li>
-    <li class="nav-item  active">
-      <a class="nav-link" href="#solutions">solutions</a>
-    </li>
+          <a class="nav-link" href="#fat">検索</a>
+        </li>
         <li class="nav-item  active">
-      <a class="nav-link" href="#services">services</a>
-    </li>
-    <li class="nav-item  active">
-      <a class="nav-link" href="#reservation">予約の方法</a>
-    </li>
-  </ul>
-</nav>
-
-
-<div class="bg_test"  id="fat">
-<div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
-
-<div class="card text-white bg-primary" style="max-width: 30rem;">
-  <div class="card-header"><p><h2>Minpa.Comで好きな民泊を検索しよう。</h2></p>
-  <p>あなたにぴったりの宿泊先がきっと見つかる。Let&apos;s enjoy searching!!</p>
-  </div>
-  <div class="card-body text-dark bg-light" align="center">
-
-<table style="max-width: 28rem;" class="my-4"  cellpadding="7">
-<tr>
-<td colspan="2">エリア</td>
-</tr>
-<tr>
-<td colspan="2">
-<input type="text" class="form-control" placeholder="area">
-</td>
-</tr>
-<tr>
-<td>チェックイン</td>
-<td>チェックアウト</td>
-</tr>
-<tr>
-<td>
-<input type="text" id="datepicker1" placeholder="MM/DD/YYYYY" class="form-control">
-
-</td>
-<td>
-<input type="text" id="datepicker2" placeholder="MM/DD/YYYYY" class="form-control">
-
-</td>
-</tr>
-<tr>
-<td>大人</td>
-<td>子供</td>
-</tr>
-<tr>
-<td>
-<div class="form-group my-2">
-  <select id="select1a" class="form-control">
-    <option>大人１人</option>
-    <option>大人２人</option>
-    <option>大人３人</option>
-    <option>大人４人</option>
-    <option>大人５人</option>
-    <option>大人６人</option>
-    <option>大人７人</option>
-    <option>大人８人</option>
-  </select>
-</div>
-</td>
-<td>
-<div class="form-group my-2">
-  <select id="select1a" class="form-control">
-    <option>こども０人</option>
-    <option>こども１人</option>
-    <option>こども２人</option>
-    <option>こども３人</option>
-    <option>こども４人</option>
-    <option>こども５人</option>
-    <option>こども６人</option>
-    <option>こども７人</option>
-  </select>
-</div>
-</td>
-</tr>
-<tr>
-<td colspan="2">
-<button type="button" class="btn btn-primary btn-lg btn-block" onClick="location.href='./users'">探す</button>
-</td>
-</tr>
-</table>
+          <a class="nav-link" href="#attribute">旅の魅力</a>
+        </li>
+        <li class="nav-item  active">
+          <a class="nav-link" href="#solutions">solutions</a>
+        </li>
+        <li class="nav-item  active">
+          <a class="nav-link" href="#services">services</a>
+        </li>
+        <li class="nav-item  active">
+          <a class="nav-link" href="#reservation">予約の方法</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="bg_test"  id="fat">
+      <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+        <div class="card text-white bg-primary" style="max-width: 30rem;">
+          <div class="card-header">
+            <p>
+              <h2>Minpa.Comで好きな民泊を検索しよう。</h2>
+            </p>
+            <p>あなたにぴったりの宿泊先がきっと見つかる。Let&apos;s enjoy searching!!</p>
+          </div>
+          <div class="card-body text-dark bg-light" align="center">
+            <table style="max-width: 28rem;" class="my-4"  cellpadding="7">
+              <tr>
+                <td colspan="2">エリア</td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <input type="text" class="form-control" placeholder="area">
+                </td>
+              </tr>
+              <tr>
+                <td>チェックイン</td>
+                <td>チェックアウト</td>
+              </tr>
+              <tr>
+                <td>
+                  <input type="text" id="datepicker1" placeholder="MM/DD/YYYYY" class="form-control">
+                </td>
+                <td>
+                  <input type="text" id="datepicker2" placeholder="MM/DD/YYYYY" class="form-control">
+                </td>
+              </tr>
+              <tr>
+                <td>大人</td>
+                <td>子供</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="form-group my-2">
+                    <select id="select1a" class="form-control">
+                      <option>大人１人</option>
+                      <option>大人２人</option>
+                      <option>大人３人</option>
+                      <option>大人４人</option>
+                      <option>大人５人</option>
+                      <option>大人６人</option>
+                      <option>大人７人</option>
+                      <option>大人８人</option>
+                    </select>
+                  </div>
+                </td>
+                <td>
+                  <div class="form-group my-2">
+                    <select id="select1a" class="form-control">
+                      <option>こども０人</option>
+                      <option>こども１人</option>
+                      <option>こども２人</option>
+                      <option>こども３人</option>
+                      <option>こども４人</option>
+                      <option>こども５人</option>
+                      <option>こども６人</option>
+                      <option>こども７人</option>
+                    </select>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <button type="button" class="btn btn-primary btn-lg btn-block" onClick="location.href='./users'">探す</button>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
+    <h1 id="attribute" align="center" class="mrgA">旅の魅力</h1>
+    <table align="center">
+      <tr>
+        <td>
+          <h2>非日常を体験できる</h2>
+        </td>
+        <td><%= image_tag('men.jpg') %>
+        </td>
+      </tr>
+      <tr>
+        <td><%= image_tag('water.jpg') %>
+        </td>
+        <td>
+          <h2>世界中の人と友達になれる</h2>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h2>自分の本当にやりたいことを確かめられる</h2>
+        </td>
+        <td><%= image_tag('jump.jpg') %>
+        </td>
+      </tr>
+      <tr>
+        <td><%= image_tag('sparkler.jpg') %>
+        </td>
+        <td>
+          <h2>いろんな価値観を知ることができる</h2>
+        </td>
+      </tr>
+    </table>
+    <h1 id="solutions" align="center" class="mrgA">solutions</h1>
+    <p style="text-align: center;">
+      <%= image_tag('sole.jpg')%>
+    </p>
+    <h1 id="services" align="center" class="mrgA">services</h1>
+    <p style="text-align: center;">
+      <%= image_tag('solution.jpg')%>
+    </p>
+    <h1 id="reservation" align="center" class="mrgA">予約の方法</h1>
+    <table align="center" style="text-align:center;">
+      <tr>
+        <td>
+          <h2>1</h2>
+        </td>
+        <td>
+          <h2>2</h2>
+        </td>
+        <td>
+          <h2>3</h2>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <h2>アカウントの作成→</h2>
+        </td>
+        <td>
+          <h2>民泊の選択→</h2>
+        </td>
+        <td>
+          <h2>予約ボタンをクリック</h2>
+        </td>
+      </tr>
+    </table>
   </div>
-</div>
-</div>
-
-
-<h1 id="attribute" align="center" class="mrgA">旅の魅力</h1>
-<table align="center">
-<tr><td><h2>非日常を体験できる</h2>
-</td>
-<td><%= image_tag('men.jpg') %>
-</td>
-</tr>
-<tr><td><%= image_tag('water.jpg') %>
-</td>
-<td><h2>世界中の人と友達になれる</h2>
-</td>
-</tr>
-<tr><td><h2>自分の本当にやりたいことを確かめられる</h2>
-</td>
-<td><%= image_tag('jump.jpg') %>
-</td>
-</tr>
-<tr><td><%= image_tag('sparkler.jpg') %>
-</td>
-<td><h2>いろんな価値観を知ることができる</h2>
-</td>
-</tr>
-
-
-
-</table>
-
-
-
-
-
-
-
-  
-  <h1 id="solutions" align="center" class="mrgA">solutions</h1>
-<p style="text-align: center;">
-<%= image_tag('sole.jpg')%>
-</p>
-<h1 id="services" align="center" class="mrgA">services</h1>
-
-<p style="text-align: center;">
-<%= image_tag('solution.jpg')%>
-</p>
-
-  <h1 id="reservation" align="center" class="mrgA">予約の方法</h1>
-  
-<table align="center" style="text-align:center;"><tr><td><h2>1</h2></td><td><h2>2</h2></td><td><h2>3</h2></td></tr>
-<tr><td><h2>アカウントの作成→</h2></td><td><h2>民泊の選択→</h2></td><td><h2>予約ボタンをクリック</h2></td></tr></table>
- 
-</div>
-
- 
-
-
-
-
-<nav class="navbar navbar-dark bg-dark text-light">
-  
-<table>
-　<thead>
-　　<tr><th>管理者画面</th></tr>
-　</thead>
-　<tbody>
-　　　<tr><td><ul><li><%= link_to("管理者画面", "/admin") %></li><li>みかん</li><li>すいか</li></ul></td></tr>
-　</tbody>
-</table>
-
-
-
-</nav>
-    
-
-  </body>
+  <nav class="navbar navbar-dark bg-dark text-light">
+    <table>
+      　
+      <thead>
+        　　
+        <tr>
+          <th>管理者画面</th>
+        </tr>
+        　</thead>
+      　
+      <tbody>
+        　　　
+        <tr>
+          <td>
+            <ul>
+              <li><%= link_to("管理者画面", "/admin") %></li>
+              <li>みかん</li>
+              <li>すいか</li>
+            </ul>
+          </td>
+        </tr>
+        　</tbody>
+    </table>
+  </nav>
+</body>
 </html>

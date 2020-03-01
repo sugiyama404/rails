@@ -1,35 +1,51 @@
+# frozen_string_literal: true
+
+# login class
 class LoginController < ApplicationController
   before_action :set_user, only: [:check]
-
 
   def login
     session[:hotel_id] = params[:id]
   end
+
   def check
     if @guest.authenticate(login_params[:password])
+      @guestid = Guest.find_by(password_digest: login_params[:password],
+                               mail: login_params[:mail])
+      session[:guest_id] = @guest.id
       sign_inhh(@guest)
       redirect_to '/users/reserved'
- #      redirect_to action: :reserved
     else
       flash.now[:danger] = t('.flash.invalid_password')
       redirect_to '/users'
     end
   end
-  def reserved
-    binding.pry
-    @hotels = Hotel.all
 
-    binding.pry
+  def reserved
+    @hotels = Hotel.all
+    @hoteldays = Hotelday.all
+    @hotelprices = Hotelprice.all
+    @reserveds = Reserved.new
   end
+
+  def save
+    @reserveds = Reserved.new(reserved_params)
+    if @reserveds.save
+      redirect_to '/users'
+    else
+      redirect_to '/users/reserved'
+    end
+  end
+
   def destory
     sign_out
     redirect_to '/users'
   end
-  def reserved
-  end
+
   def signin
     @guest = Guest.new
   end
+
   def create
     @guest = Guest.new(user_params)
     if @guest.save
@@ -41,19 +57,25 @@ class LoginController < ApplicationController
 
   private
 
-    def user_params
-      params.require(:guest).permit(:name, :mail, :password, :password_confirmation)
-    end
+  def user_params
+    params.require(:guest).permit(:name, :mail, :password,
+                                  :password_confirmation)
+  end
 
-    def set_user
-      @guest = Guest.find_by!(mail: login_params[:mail])
-    rescue
-      flash.now[:danger] = t('.flash.invalid_mail')
-      render action: 'login'
-    end
+  def set_user
+    @guest = Guest.find_by!(mail: login_params[:mail])
+  rescue StandardError
+    flash.now[:danger] = t('.flash.invalid_mail')
+    render action: 'login'
+  end
 
-    # 許可するパラメータ
-    def login_params
-      params.require(:login).permit(:mail, :password)
-    end
+  # permmiting parameta
+  def login_params
+    params.require(:login).permit(:mail, :password)
+  end
+
+  def reserved_params
+    params.require(:reserved).permit(:guest_id, :hotel_id, :stayday,
+                                     :room, :guestnum, :reservedday)
+  end
 end

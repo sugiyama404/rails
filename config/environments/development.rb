@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -6,8 +8,8 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
-    #RailsAdminは、管理画面にアクセスする管理者の管理にDeviseを利用しています。
-    config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  # RailsAdminは、管理画面にアクセスする管理者の管理にDeviseを利用しています。
+  config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
   # Do not eager load code on boot.
   config.eager_load = false

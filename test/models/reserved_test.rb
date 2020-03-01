@@ -2,7 +2,7 @@
 
 require 'test_helper'
 
-class HotelpriceTest < ActiveSupport::TestCase
+class ReservedTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

@@ -1,16 +1,64 @@
 <div class="card mx-auto my-4" style="width: 1000px;">
-  <div class="card-header">
-    予約する
-  </div>
+  <div class="card-header">予約する</div>
   <div class="card-body">
-  <% @hotels.each do |hotel| %>
-  <% if hotel.id == session[:hotel_id] %>
-  <%= hotelday.name %>
-    <blockquote class="blockquote mb-0">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <%=session[:hotel_id]%>Integer posuere erat a ante.</p>
-      <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-    </blockquote>
-     <% end %>
-    <% end %>
-  </div>
-</div>
+    <% @hoteldays.each do |hotelday| %>
+      <% @hotelprices.each do |hotelprice| %>
+        <% @hotels.each do |hotel| %>
+          <% if hotel.id == session[:hotel_id].to_i %>
+            <% if hotelprice.hotel_id == session[:hotel_id].to_i %>
+              <% if hotelday.hotel_id == session[:hotel_id].to_i %>
+                <blockquote class="blockquote mb-0">
+                  <%= hotel.name %>
+                  <%= image_tag "/images/#{hotel.imgname}.png", class: 'card-img-top' %>
+                  <%= form_for :reserved, url: "/users/save", method: :post do |f| %>
+                    <%= f.label :日付 %>
+                    <%= f.hidden_field :guest_id, :value => session[:guest_id].to_i %>
+                    <%= f.hidden_field :hotel_id, :value => session[:hotel_id].to_i %>
+                    <%= f.date_select :reservedday, id: "da" %>
+                    <%= f.label :"予約日数" %>
+                    <%= f.select :stayday, [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6]] ,class:"form-control" %>
+                    <%= f.label :"人数" %>
+                    <%= f.select :guestnum, [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6]] ,class:"form-control" %>
+                    <table class="table table-condensed my-2">
+                      <tr>
+                        <th></th>
+                        <th>残り部屋数</th>
+                        <th>残り部屋数</th>
+                        <th>値段</th>
+                        <th>
+                          <tr>
+                            <td><%= f.check_box(:room, {class: 'checkbox',:checked => true},checked_value = "best",nil )%></td>
+                            <td>ゴージャススーイト</td>
+                            <td><%= hotelday.best %> 部屋</td>
+                            <td><%= hotelprice.best %> 円</td>
+                          </tr>
+                          <tr>
+                            <td><%= f.check_box(:room, {class: 'checkbox'},checked_value = "rich",nil )%></td>
+                            <td>スイート</td>
+                            <td><%= hotelday.rich %> 部屋</td>
+                            <td><%= hotelprice.rich %> 円</td>
+                          </tr>
+                          <tr>
+                            <td><%= f.check_box(:room, {class: 'checkbox'},checked_value = "fourth",nil )%></td>
+                            <td>マルチ</td>
+                            <td><%= hotelday.fourth %> 部屋</td>
+                            <td><%= hotelprice.fourth %> 円</td>
+                          </tr>
+                          <tr>
+                            <td><%= f.check_box(:room, {class: 'checkbox'},checked_value = "double",nil )%></td>
+                            <td>ダブル</td>
+                            <td><%= hotelday.double %> 部屋</td>
+                            <td><%= hotelprice.double %> 円</td>
+                          </tr>
+                        </table>
+                        <%= f.submit "予約する" %>
+                      <% end %>
+                    </blockquote>
+                  <% end %>
+                <% end %>
+              <% end %>
+            <% end %>
+          <% end %>
+        <% end %>
+      </div>
+    </div>

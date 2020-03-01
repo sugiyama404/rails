@@ -1,7 +1,9 @@
 {
-    "git.ignoreLimitWarning": true,
+  "git.ignoreLimitWarning": true,
 
-    "solargraph.useBundler": false
+  "solargraph.useBundler": false,
 
+  "files.associations": {
+    "*.erb": "erb"
+  }
 }
-
