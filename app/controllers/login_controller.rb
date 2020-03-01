@@ -49,9 +49,9 @@ class LoginController < ApplicationController
   def create
     @guest = Guest.new(user_params)
     if @guest.save
-      redirect_to '/users/login'
+      redirect_to "/users/#{session[:hotel_id]}/login"
     else
-      redirect_to '/users/create'
+      redirect_to '/users'
     end
   end
 
