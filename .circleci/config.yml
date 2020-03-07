@@ -5,8 +5,8 @@ orbs:
 jobs:
   build:
     docker:
-      - image: circleci/ruby:2.5.3-stretch-node
-      working_directory: ~/sampleApp
+      - image: circleci/ruby:2.6.3-stretch-node
+      working_directory: ~/repo
  #   executor: default
     steps:
       - checkout
