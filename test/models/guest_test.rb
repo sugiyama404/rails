@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require 'test/test_helper.rb'
-
 class GuestTest < ActiveSupport::TestCase
   def setup
     @guest = Guest.new(name: 'Example User', email: 'user@example.com', password_digest: 'pass')
