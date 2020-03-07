@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'test_helper'
+require 'test/test_helper'
 
 class GuestTest < ActiveSupport::TestCase
   def setup
