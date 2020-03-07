@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   post '/users/:id/login', to: 'login#check'
   get '/users/reserved', to: 'login#reserved'
   delete '/users/logout', to: 'login#destroy'
+
+  # login
   get '/users/reserved', to: 'login#reserved'
   get '/users/signin', to: 'login#signin'
   post '/users/create', to: 'login#create'
