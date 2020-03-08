@@ -17,8 +17,8 @@ jobs:
       - run:
           name: bundle install
           command: bundle install --path vendor/bundle && \
-          apt-get update && \
-          apt-get install -y nodejs
+            apt-get update && \
+            apt-get install -y nodejs
       - run:
           name: データベースの起動を待機
           command: dockerize -wait tcp://127.0.0.1:3306 -timeout 1m
