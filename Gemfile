@@ -70,8 +70,6 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
-  # JavaScriptのランタイムが無いよ
-  # gem 'therubyracer'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -94,6 +92,3 @@ gem 'devise'
 gem 'rails_admin'
 # cancan
 gem 'cancan'
-
-# JavaScriptのランタイムが無いよ
-# gem 'therubyracer', platforms: :ruby
