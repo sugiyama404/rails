@@ -39,9 +39,9 @@ jobs:
       - run:
           name: データベースのセットアップ
           command: bundle exec rake db:schema:load
-      - run:
-          name: テストの実行
-          command: bundle exec rspec
+      #- run:
+      #    name: テストの実行
+      #    command: bundle exec rspec
       - run:
           name: テストのテスト
           command: "ruby test/models/guest_test.rb"
