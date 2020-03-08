@@ -27,7 +27,7 @@ jobs:
           name: テストの実行
           command: bundle exec rspec
       - run:
-          name: Run test
+          name: テストのテスト
           command: "ruby test/models/guest_test.rb"
 
 workflows:
