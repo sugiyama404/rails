@@ -6,27 +6,26 @@ jobs:
       - image: circleci/ruby:2.6.5
         environment:
           RAILS_ENV: test
-      - image: circleci/mysql:5.7
+      - image: circleci/mysql:5.6
         environment:
-          MYSQL_ALLOW_EMPTY_PASSWORD: yes
+          MYSQL_ALLOW_EMPTY_PASSWORD: true
+          MYSQL_ROOT_PASSWORD: ""
+          MYSQL_DATABASE: railsdatabase
     working_directory: ~/sampleApp
     steps:
       - checkout
-      - restore_cache:
-        keys:
-          - app-{{ checksum "Gemfile.lock" }}-{{ checksum "yarn.lock" }}
-          - app-
-      - run: bundle install --path vendor/bundle
-      - run: yarn install
-      - save_cache:
-        key: app-{{ checksum "Gemfile.lock" }}-{{ checksum "yarn.lock" }}
-        paths:
-          - vendor/bundle
-          - node_modules
-      - run: cp config/database.yml.circleci config/database.yml
-      - run: bundle exec rake db:create db:schema:load
-      - run: bundle exec bin/webpack
-      - run: bundle exec rspec
+      - run:
+          name: bundle install
+          command: bundle install --path vendor/bundle
+      - run:
+          name: データベースの起動を待機
+          command: dockerize -wait tcp://127.0.0.1:3306 -timeout 1m
+      - run:
+          name: データベースのセットアップ
+          command: bundle exec rake db:schema:load
+      - run:
+          name: テストの実行
+          command: bundle exec rspec
       - run:
           name: Run test
           command: "ruby test/models/guest_test.rb"
