@@ -20,7 +20,7 @@ jobs:
             bundle install --path vendor/bundle
       - run:
           name: nodejsのインストール
-          command: gem install 'therubyracer', platforms: :ruby
+          command: gem install 'therubyracer'
 
       - run:
           name: データベースの起動を待機
