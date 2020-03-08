@@ -92,3 +92,6 @@ gem 'devise'
 gem 'rails_admin'
 # cancan
 gem 'cancan'
+
+# JavaScriptのランタイムが無いよ
+# gem 'therubyracer', platforms: :ruby
