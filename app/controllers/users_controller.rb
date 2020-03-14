@@ -2,8 +2,8 @@
 
 class UsersController < ApplicationController
   def user
-    #  session[:hotel_id].clear
     @hoteldays = Hotelday.left_joins(:hotel)
     @hotelprices = Hotelprice.all
+    @hotelcount = Hotel.all
   end
 end

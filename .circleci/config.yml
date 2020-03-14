@@ -11,6 +11,7 @@ jobs:
           MYSQL_ALLOW_EMPTY_PASSWORD: true
           MYSQL_ROOT_PASSWORD: ""
           MYSQL_DATABASE: railsdatabase
+      - image: circleci/node:4.8.2
     working_directory: ~/sampleApp
     steps:
       - checkout
@@ -18,9 +19,9 @@ jobs:
           name: bundle install
           command: |
             bundle install --path vendor/bundle
-      - run:
-          name: nodejsのインストール
-          command: gem install 'therubyracer'
+      #- run:
+      #    name: nodejsのインストール
+      #    command: gem install 'therubyracer'
 
       - run:
           name: データベースの起動を待機
