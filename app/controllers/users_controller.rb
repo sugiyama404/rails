@@ -2,8 +2,12 @@
 
 class UsersController < ApplicationController
   def user
-    @hoteldays = Hotelday.left_joins(:hotel)
-    @hotelprices = Hotelprice.all
-    @hotelcount = Hotel.all
+    # @hoteldays = Hotelday.left_joins(:hotel)
+    # @hotelprices = Hotelprice.all
+    @confirms = Confirm.all
   end
+
+  private
+
+  def search; end
 end
