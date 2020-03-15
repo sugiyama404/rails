@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require_relative 'test_helper'
-# require 'test_helper'
+# require_relative 'test_helper'
+require '/home/circleci/sampleApp/test/test_helper'
 
 class GuestTest < ActiveSupport::TestCase
   def setup
