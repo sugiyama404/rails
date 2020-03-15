@@ -2,10 +2,22 @@
 
 one:
   name: MyString
+  bestname: MyString
+  richname: MyString
+  fourthname: MyString
+  doublename: MyString
   mails: MyString
+  address: MyString
+  imgname: MyString
   password: MyString
 
 two:
   name: MyString
+  bestname: MyString
+  richname: MyString
+  fourthname: MyString
+  doublename: MyString
   mails: MyString
+  address: MyString
+  imgname: MyString
   password: MyString

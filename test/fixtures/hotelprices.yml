@@ -2,16 +2,16 @@
 
 one:
   hotel_id: 1
-  best: 1
-  rich: 1
-  fourth: 1
-  double: 1
+  bestprice: 1
+  richprice: 1
+  fourthprice: 1
+  doubleprice: 1
   newday: 2020-02-24
 
 two:
   hotel_id: 1
-  best: 1
-  rich: 1
-  fourth: 1
-  double: 1
+  bestprice: 1
+  richprice: 1
+  fourthprice: 1
+  doubleprice: 1
   newday: 2020-02-24

@@ -2,16 +2,16 @@
 
 one:
   hotelid: 1
-  best: 1
-  rich: 1
-  fourth: 1
-  double: 1
+  bestvacant: 1
+  richvacant: 1
+  fourthvacant: 1
+  doublevacant: 1
   days: 2020-02-16
 
 two:
   hotelid: 1
-  best: 1
-  rich: 1
-  fourth: 1
-  double: 1
+  bestvacant: 1
+  richvacant: 1
+  fourthvacant: 1
+  doublevacant: 1
   days: 2020-02-16
