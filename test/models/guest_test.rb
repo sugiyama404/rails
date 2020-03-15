@@ -7,6 +7,6 @@ class GuestTest < ActiveSupport::TestCase
     @guests = Guest.new(name: 'Example User', email: 'user@example.com', password_digest: 'pass')
   end
   test 'should be valid' do
-    assert @guest.valid?
+    assert @guests.valid?
   end
 end
