@@ -24,8 +24,8 @@ jobs:
           command: dockerize -wait tcp://127.0.0.1:3306 -timeout 2m
       # Database setup
       - run:
-        name: データベースのセットアップ1
-        command: bundle exec rake db:create
+          name: データベースのセットアップ1
+          command: bundle exec rake db:create
       - run:
           name: データベースのセットアップ2
           command: bundle exec rake db:schema:load
