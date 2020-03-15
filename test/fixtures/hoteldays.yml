@@ -9,7 +9,7 @@ one:
   days: 2020-02-16
 
 two:
-  hotel_id: 1
+  hotel_id: 2
   bestvacant: 1
   richvacant: 1
   fourthvacant: 1

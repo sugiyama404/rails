@@ -9,8 +9,8 @@ one:
   reservedday: 2020-02-29
 
 two:
-  guest_id: 1
-  hotel_id: 1
+  guest_id: 2
+  hotel_id: 2
   stayday: 1
   room: MyString
   guestnum: 1

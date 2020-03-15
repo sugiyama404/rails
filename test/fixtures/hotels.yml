@@ -6,7 +6,7 @@ one:
   richname: MyString
   fourthname: MyString
   doublename: MyString
-  mails: MyString
+  mails: MyString@ddd
   address: MyString
   imgname: MyString
   password: MyString
@@ -17,7 +17,7 @@ two:
   richname: MyString
   fourthname: MyString
   doublename: MyString
-  mails: MyString
+  mails: MyString@ddd
   address: MyString
   imgname: MyString
   password: MyString
