@@ -11,10 +11,10 @@ jobs:
           RAILS_ENV: test
           DB_HOST: 127.0.0.1
           encoding: utf8
-          #MYSQL_ALLOW_EMPTY_PASSWORD: true
-          #MYSQL_ROOT_PASSWORD: ""
-          DB_USERNAME: "root"
-          DB_PASSWORD: "password"
+          MYSQL_ALLOW_EMPTY_PASSWORD: true
+          MYSQL_ROOT_PASSWORD: ""
+          #DB_USERNAME: "root"
+          #DB_PASSWORD: "password"
           MYSQL_DATABASE: railsdatabase
     working_directory: ~/sampleApp
     steps:
