@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-require '/sampleApp/test/test_helper'
+require_relative './test_helper'
+# require 'test_helper'
 
 class GuestTest < ActiveSupport::TestCase
   def setup
