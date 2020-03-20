@@ -17,8 +17,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script>
       $(function() {
-        $("#serach_checkin").datepicker();
-        $("#serach_checkout").datepicker();
+        $("#checkin").datepicker({
+          dateFormat: 'yy/mm/dd'
+        });
+        $("#checkout").datepicker({
+          dateFormat: 'yy/mm/dd'
+        });
       });
       $(document).ready(function(){
         $('body').scrollspy({target: ".navbar", offset: 50});
@@ -55,7 +59,7 @@
             </p>
             <p>あなたにぴったりの宿泊先がきっと見つかる。Let&apos;s enjoy searching!!</p>
           </div>
-          <%= form_for :search, url: "/users" do |f| %>
+          <%= form_tag("/users/search",:method => 'get') do %>
             <div class="card-body text-dark bg-light" align="center">
               <table style="max-width: 28rem;" class="my-4"  cellpadding="7">
                 <tr>
@@ -63,7 +67,7 @@
                 </tr>
                 <tr>
                   <td colspan="2">
-                    <%= f.text_field :area, :placeholder => "area", class:'form-control' %>
+                    <%= text_field_tag :area, '', placeholder: "area", class:'form-control' %>
                   </td>
                 </tr>
                 <tr>
@@ -72,10 +76,10 @@
                 </tr>
                 <tr>
                   <td>
-                    <%= f.text_field :checkin, :placeholder => "MM/DD/YYYYY", class:'form-control' %>
+                    <%= text_field_tag :checkin, '', placeholder: "YYYYY/MM/DD", class:'form-control' %>
                   </td>
                   <td>
-                    <%= f.text_field :checkout, :placeholder => "MM/DD/YYYYY", class:'form-control' %>
+                    <%= text_field_tag :checkout, '', placeholder: "YYYYY/MM/DD", class:'form-control' %>
                   </td>
                 </tr>
                 <tr>
@@ -85,18 +89,18 @@
                 <tr>
                   <td>
                     <div class="form-group my-2">
-                      <%= f.select :adultnum, {大人１人: 1, 大人２人: 2, 大人３人: 3,大人４人: 4, 大人５人: 5, 大人６人: 6, 大人７人: 7, 大人８人: 8},{ include_blank: false }, {class:'form-control'} %>
+                      <%= select_tag 'adultnum', options_for_select({大人１人: 1, 大人２人: 2, 大人３人: 3,大人４人: 4, 大人５人: 5, 大人６人: 6, 大人７人: 7, 大人８人: 8},1), include_blank: false , class: 'form-control' %>
                     </div>
                   </td>
                   <td>
                     <div class="form-group my-2">
-                      <%= f.select :chrildnum, {こども0人: 0,こども１人: 1, こども２人: 2, こども３人: 3,こども４人: 4},{ include_blank: false }, {class:'form-control'} %>
+                      <%= select_tag 'childnum', options_for_select({こども0人: 0,こども１人: 1, こども２人: 2, こども３人: 3,こども４人: 4},1), include_blank: false , class: 'form-control' %>
                     </div>
                   </td>
                 </tr>
                 <tr>
                   <td colspan="2">
-                    <%= f.submit "探す", class: "btn btn-primary btn-lg btn-block" %>
+                    <%= submit_tag 'Search', :name => nil, class: "btn btn-primary btn-lg btn-block" %>
                   <% end %>
                 </td>
               </tr>
