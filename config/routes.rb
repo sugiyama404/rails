@@ -11,8 +11,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   get '/', to: 'tops#top'
 
-  # post '/users/search', to: 'users#user'
-  # あとで消す
   get '/users/search', to: 'users#user'
   get '/users/:id/login', to: 'login#login'
   post '/users/:id/login', to: 'login#check'
@@ -20,6 +18,7 @@ Rails.application.routes.draw do
   delete '/users/logout', to: 'login#destroy'
 
   # login
+  get '/users/reserved/:selectdays', to: 'login#reserved'
   get '/users/reserved', to: 'login#reserved'
   get '/users/signin', to: 'login#signin'
   post '/users/create', to: 'login#create'

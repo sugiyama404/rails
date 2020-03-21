@@ -20,3 +20,20 @@ $(function() {
     $(this).prop("checked", true); //  押したやつだけチェックつける
   });
 });
+
+$(function() {
+  //セレクトボックスが切り替わったら発動
+  $(
+    "#reserved_reservedday_1i,#reserved_reservedday_2i,#reserved_reservedday_3i"
+  ).change(function() {
+    var selectdays =
+      "" +
+      $("#reserved_reservedday_1i").val() +
+      "-" +
+      $("#reserved_reservedday_2i").val() +
+      "-" +
+      $("#reserved_reservedday_3i").val() +
+      "";
+    window.location.href = "/users/reserved/" + selectdays + "";
+  });
+});

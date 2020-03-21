@@ -2,6 +2,7 @@
 
 # login class
 class LoginController < ApplicationController
+  require 'date'
   before_action :set_user, only: [:check]
 
   def login
@@ -17,21 +18,30 @@ class LoginController < ApplicationController
       redirect_to '/users/reserved'
     else
       flash.now[:danger] = t('.flash.invalid_password')
-      redirect_to '/users'
+      redirect_to '/users/search'
     end
   end
 
   def reserved
-    @hotels = Hotel.all
-    @hoteldays = Hotelday.all
-    @hotelprices = Hotelprice.all
+    session[:days] = if params[:selectdays].present?
+                       params[:selectdays]
+                     else
+                       Date.today
+                     end
+    @confirm = Confirm.where(id: session[:hotel_id].to_i).where(days: session[:days])
+    if @confirm.present?
+    else
+      @confirm = Defaultconfirm.where(id: session[:hotel_id].to_i)
+    end
     @reserveds = Reserved.new
   end
 
   def save
     @reserveds = Reserved.new(reserved_params)
     if @reserveds.save
-      redirect_to '/users'
+      session[:days] = nil
+      session[:hotel_id] = nil
+      redirect_to '/users/search'
     else
       redirect_to '/users/reserved'
     end
@@ -39,7 +49,7 @@ class LoginController < ApplicationController
 
   def destory
     sign_out
-    redirect_to '/users'
+    redirect_to '/users/search'
   end
 
   def signin
@@ -51,7 +61,7 @@ class LoginController < ApplicationController
     if @guest.save
       redirect_to "/users/#{session[:hotel_id]}/login"
     else
-      redirect_to '/users'
+      redirect_to '/users/search'
     end
   end
 
