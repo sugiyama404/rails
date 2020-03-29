@@ -92,3 +92,6 @@ gem 'devise'
 gem 'rails_admin'
 # cancan
 gem 'cancan'
+
+# kaminariを使ってページネーションを作る
+gem 'kaminari'

@@ -7,7 +7,7 @@ class Confirm < ApplicationRecord
     elsif area.present?
       where(['address LIKE ?', "%#{area}%"]).or(Confirm.where(bestvacant: num..Float::INFINITY, richvacant: num..Float::INFINITY, fourthvacant: num..Float::INFINITY, doublevacant: num..Float::INFINITY)).group(:id)
     else
-      all
+      all.group(:id)
     end
   end
 end

@@ -174,28 +174,21 @@
       </tr>
     </table>
   </div>
-  <nav class="navbar navbar-dark bg-dark text-light">
+  <nav class="navbar navbar-dark bg-dark">
     <table>
-      　
       <thead>
-        　　
         <tr>
-          <th>管理者画面</th>
         </tr>
-        　</thead>
-      　
+      </thead>
       <tbody>
-        　　　
         <tr>
           <td>
-            <ul>
-              <li><%= link_to("管理者画面", "/admin") %></li>
-              <li>みかん</li>
-              <li>すいか</li>
-            </ul>
+            <div  class="text-right">
+              <button type="button" class="btn btn-success" onclick="location.href='/admin'">管理者画面</button>
+            </div>
           </td>
         </tr>
-        　</tbody>
+      </tbody>
     </table>
   </nav>
 </body>

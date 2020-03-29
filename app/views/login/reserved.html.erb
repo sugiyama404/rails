@@ -3,8 +3,10 @@
   <div class="card-body">
     <% @confirm.each do |hotel| %>
       <blockquote class="blockquote mb-0">
-        <%= hotel.name %>
-        <%= image_tag "/images/#{hotel.imgname}.png", class: 'card-img-top my-4' %>
+        <h3 class="text-center alert alert-secondary">
+          <%= hotel.name %>
+        </h3>
+        <%= image_tag "/images/#{hotel.imgname}.png", class: 'card-img-top mb-4' %>
         <%= form_for :reserved, url: "/users/save", method: :post do |f| %>
           <%= f.label :日付 %>
           <%= f.hidden_field :guest_id, :value => session[:guest_id].to_i %>
@@ -13,7 +15,7 @@
           <%= f.label :"予約日数" %>
           <%= f.select :stayday, [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6]], {} ,class:"form-control bootstrap-date" %>
           <%= f.label :"人数" %>
-          <%= f.select :guestnum, [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6]], {} ,class:"form-control bootstrap-date" %>
+          <%= f.select :guestnum, [[1, 1], [2, 2], [3, 3], [4, 4], [5, 5], [6, 6]], {} ,class:"form-control bootstrap-date alertbefore" %>
           <table class="table table-condensed my-4 text-center">
             <tr class="table-primary">
               <th></th>
@@ -22,31 +24,60 @@
               <th>値段</th>
             </tr>
             <tr>
-              <td><%= f.check_box(:room, {class: 'checkbox',:checked => true},checked_value = "best",nil )%></td>
-              <td class="text-left"><%= hotel.bestname %></td>
-              <td><%= hotel.bestvacant %> 部屋</td>
-              <td><%= hotel.bestprice %> 円</td>
+              <% if hotel.bestvacant.to_i == 0 %>
+                <td><%= f.check_box(:room, {class: 'checkbox checkboxkiller',:checked => true},checked_value = "best",nil )%></td>
+                <td class="text-left"><%= hotel.bestname %></td>
+                <td>満室です</td>
+              <% else %>
+                <td><%= f.check_box(:room, {class: 'checkbox',:checked => true},checked_value = "best",nil )%></td>
+                <td class="text-left"><%= hotel.bestname %></td>
+                <td><%= hotel.bestvacant.to_i %> 部屋</td>
+              <% end %>
+              <td><%= hotel.bestprice.to_i %> 円</td>
             </tr>
             <tr>
-              <td><%= f.check_box(:room, {class: 'checkbox'},checked_value = "rich",nil )%></td>
-              <td class="text-left"><%= hotel.richname %></td>
-              <td><%= hotel.richvacant %> 部屋</td>
-              <td><%= hotel.richprice %> 円</td>
+              <% if hotel.richvacant.to_i == 0 %>
+                <td><%= f.check_box(:room, {class: 'checkbox  checkboxkiller'},checked_value = "rich",nil )%></td>
+                <td class="text-left"><%= hotel.richname %></td>
+                <td>満室です</td>
+                <td>-</td>
+              <% else %>
+                <td><%= f.check_box(:room, {class: 'checkbox'},checked_value = "rich",nil )%></td>
+                <td class="text-left"><%= hotel.richname %></td>
+                <td><%= hotel.richvacant.to_i %> 部屋</td>
+                <td><%= hotel.richprice.to_i %> 円</td>
+              <% end %>
             </tr>
             <tr>
-              <td><%= f.check_box(:room, {class: 'checkbox'},checked_value = "fourth",nil )%></td>
-              <td class="text-left"><%= hotel.fourthname %></td>
-              <td><%= hotel.fourthvacant %> 部屋</td>
-              <td><%= hotel.fourthprice %> 円</td>
+              <% if hotel.fourthvacant.to_i == 0 %>
+                <td><%= f.check_box(:room, {class: 'checkbox  checkboxkiller'},checked_value = "fourth",nil )%></td>
+                <td class="text-left"><%= hotel.doublename %></td>
+                <td>満室です</td>
+                <td>-</td>
+              <% else %>
+                <td><%= f.check_box(:room, {class: 'checkbox'},checked_value = "fourth",nil )%></td>
+                <td class="text-left"><%= hotel.fourthname %></td>
+                <td><%= hotel.fourthvacant.to_i %> 部屋</td>
+                <td><%= hotel.fourthprice.to_i %> 円</td>
+              <% end %>
             </tr>
             <tr>
-              <td><%= f.check_box(:room, {class: 'checkbox'},checked_value = "double",nil )%></td>
-              <td class="text-left"><%= hotel.doublename %></td>
-              <td><%= hotel.doublevacant %> 部屋</td>
-              <td><%= hotel.doubleprice %> 円</td>
+              <% if hotel.doublevacant.to_i == 0 %>
+                <td><%= f.check_box(:room, {class: 'checkbox checkboxkiller'},checked_value = "double",nil )%></td>
+                <td class="text-left"><%= hotel.doublename %></td>
+                <td>満室です</td>
+                <td>-</td>
+              <% else %>
+                <td><%= f.check_box(:room, {class: 'checkbox'},checked_value = "double",nil )%></td>
+                <td class="text-left"><%= hotel.doublename %></td>
+                <td><%= hotel.doublevacant.to_i %> 部屋</td>
+                <td><%= hotel.doubleprice.to_i %> 円</td>
+              <% end %>
             </tr>
           </table>
-          <%= f.submit "予約する" %>
+          <div class="text-center">
+            <%= f.submit "予約する", class: "btn btn-outline-primary btn-lg btn-block" %>
+          </div>
         <% end %>
       </blockquote>
     <% end %>
