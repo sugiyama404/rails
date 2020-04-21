@@ -3,7 +3,7 @@
 # config valid for current version and patch releases of Capistrano
 lock '~> 3.7.0'
 
-set :application, 'sampleApp'
+set :application, 'SampleApp'
 set :repo_url, 'git@github.com:sugiyama404/rails.git'
 set :deploy_to, '/var/www/sampleApp'
 

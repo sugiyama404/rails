@@ -8,7 +8,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module AppName
+module SampleApp
   # module SampleApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
