@@ -2,7 +2,7 @@
 
 class CreateReserveds < ActiveRecord::Migration[5.2]
   def change
-    create_table :reserveds do |t|
+    create_table :Reserveds do |t|
       t.integer :guest_id
       t.integer :hotel_id
       t.string :room
