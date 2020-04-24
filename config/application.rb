@@ -9,11 +9,13 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 module AppName
+  # module SampleApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
     config.time_zone = 'Tokyo'
+    # 　コメント増やす
     # デフォルトのlocaleを日本語(:ja)にする
     # config.i18n.default_locale = :ja
 
