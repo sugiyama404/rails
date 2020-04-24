@@ -1,13 +1,12 @@
-# frozen_string_literal: true
-
 class CreateReserveds < ActiveRecord::Migration[5.2]
   def change
-    create_table :Reserveds do |t|
+    create_table :reserveds do |t|
       t.integer :guest_id
       t.integer :hotel_id
+      t.integer :stayday
       t.string :room
       t.integer :guestnum
-      t.date :Reservedday
+      t.date :reservedday
 
       t.timestamps
     end
