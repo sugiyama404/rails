@@ -87,7 +87,7 @@ $(function () {
 $(function () {
   //バリデーション
   $("input.require").on("blur", function () {
-    let error;
+    let error = false;
     let value = $(this).val();
     if (value == "") {
       error = true;
