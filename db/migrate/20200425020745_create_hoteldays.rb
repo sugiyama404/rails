@@ -1,13 +1,11 @@
-# frozen_string_literal: true
-
 class CreateHoteldays < ActiveRecord::Migration[5.2]
   def change
     create_table :hoteldays do |t|
-      t.integer :hotelid
-      t.integer :best
-      t.integer :rich
-      t.integer :fourth
-      t.integer :double
+      t.integer :hotel_id
+      t.integer :bestvacant
+      t.integer :richvacant
+      t.integer :fourthvacant
+      t.integer :doublevacant
       t.date :days
 
       t.timestamps
