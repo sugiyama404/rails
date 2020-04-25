@@ -14,8 +14,8 @@
 //= require activestorage
 //= require turbolinks
 //= require_tree .
-$(function() {
-  $(".checkbox").on("click", function() {
+$(function () {
+  $(".checkbox").on("click", function () {
     if ($(this).is(".checkboxkiller")) {
     } else {
       $(".checkbox").prop("checked", false); //  全部のチェックを外す
@@ -24,73 +24,69 @@ $(function() {
   });
 });
 
-$(function() {
+$(function () {
   //セレクトボックスが切り替わったら発動
   $(
     "#reserved_reservedday_1i,#reserved_reservedday_2i,#reserved_reservedday_3i"
-  ).change(function() {
-    try {
-      var today = new Date();
+  ).change(function () {
+    var today = new Date();
 
-      var selectdays2 = new Date(
-        Number($("#reserved_reservedday_1i").val()),
-        Number($("#reserved_reservedday_2i").val()) - 1,
-        Number($("#reserved_reservedday_3i").val()),
-        00,
-        00
-      );
+    var selectdays2 = new Date(
+      Number($("#reserved_reservedday_1i").val()),
+      Number($("#reserved_reservedday_2i").val()) - 1,
+      Number($("#reserved_reservedday_3i").val()),
+      00,
+      00
+    );
 
-      function lowerThanDateOnly(date1, date2) {
-        var year1 = date1.getFullYear();
-        var month1 = date1.getMonth() + 1;
-        var day1 = date1.getDate();
+    function lowerThanDateOnly(date1, date2) {
+      var year1 = date1.getFullYear();
+      var month1 = date1.getMonth() + 1;
+      var day1 = date1.getDate();
 
-        var year2 = date2.getFullYear();
-        var month2 = date2.getMonth() + 1;
-        var day2 = date2.getDate();
+      var year2 = date2.getFullYear();
+      var month2 = date2.getMonth() + 1;
+      var day2 = date2.getDate();
 
-        if (year1 == year2) {
-          if (month1 == month2) {
-            return day1 < day2;
-          } else {
-            return month1 < month2;
-          }
+      if (year1 == year2) {
+        if (month1 == month2) {
+          return day1 < day2;
         } else {
-          return year1 < year2;
+          return month1 < month2;
         }
+      } else {
+        return year1 < year2;
       }
-
-      if (lowerThanDateOnly(selectdays2, today)) {
-        $(".alertbefore").after(
-          "<div class='alert alert-danger text-center' role='alert'>今日より前の日付には予約できません。</div>"
-        );
-        return false;
-      }
-
-      var selectdays =
-        "" +
-        $("#reserved_reservedday_1i").val() +
-        "-" +
-        $("#reserved_reservedday_2i").val() +
-        "-" +
-        $("#reserved_reservedday_3i").val() +
-        "";
-      window.location.href = "/users/reserved/" + selectdays + "";
-    } catch {
-      alert(e);
     }
+
+    if (lowerThanDateOnly(selectdays2, today)) {
+      $(".alertbefore").after(
+        "<div class='alert alert-danger text-center' role='alert'>今日より前の日付には予約できません。</div>"
+      );
+      return false;
+    }
+
+    var selectdays =
+      "" +
+      $("#reserved_reservedday_1i").val() +
+      "-" +
+      $("#reserved_reservedday_2i").val() +
+      "-" +
+      $("#reserved_reservedday_3i").val() +
+      "";
+    window.location.href = "/users/reserved/" + selectdays + "";
   });
 });
 
-$(function() {
-  $(".checkboxkiller").click(function() {
+$(function () {
+  $(".checkboxkiller").click(function () {
     return false;
   });
 });
 
-$(function() {
+$(function () {
   //バリデーション
-  $("input.require").on("blur", function() {
+  $("input.require").on("blur", function () {
     let error;
     let value = $(this).val();
     if (value == "") {
@@ -110,7 +106,7 @@ $(function() {
   });
 });
 
-$("#form_id").submit(function() {
+$("#form_id").submit(function () {
   //
   // バリデーションチェックや、データの加工を行う。
   //
@@ -143,7 +139,7 @@ $("#form_id").submit(function() {
   }
 });
 
-$("#form_id2").submit(function() {
+$("#form_id2").submit(function () {
   //
   // バリデーションチェックや、データの加工を行う。
   //
