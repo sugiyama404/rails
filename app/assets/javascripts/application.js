@@ -106,67 +106,70 @@ $(function () {
   });
 });
 
-$("#form_id").submit(function () {
-  //
-  // バリデーションチェックや、データの加工を行う。
-  //
+$(function () {
+  $("#form_id").submit(function () {
+    //
+    // バリデーションチェックや、データの加工を行う。
+    //
 
-  let error;
-  let errormail;
-  let errorpassword;
-  let value = $("#login_mail").val();
-  if (value == "") {
-    error = true;
-    errormail = true;
-  } else if (!value.match(/[0-9a-zA-Z]/)) {
-    error = true;
-    errormail = true;
-  }
+    let error;
+    let errormail;
+    let errorpassword;
+    let value = $("#login_mail").val();
+    if (value == "") {
+      error = true;
+      errormail = true;
+    } else if (!value.match(/[0-9a-zA-Z]/)) {
+      error = true;
+      errormail = true;
+    }
 
-  let value2 = $("#login_password").val();
-  if (value2 == "") {
-    error = true;
-    errorpassword = true;
-  } else if (!value2.match(/[0-9a-zA-Z]/)) {
-    error = true;
-    errorpassword = true;
-  }
+    let value2 = $("#login_password").val();
+    if (value2 == "") {
+      error = true;
+      errorpassword = true;
+    } else if (!value2.match(/[0-9a-zA-Z]/)) {
+      error = true;
+      errorpassword = true;
+    }
 
-  if (error) {
-    //エラー時の処理
-    //バリデーションチェックの結果submitしない場合、return falseすることでsubmitを中止することができる。
-    return false;
-  }
+    if (error) {
+      //エラー時の処理
+      //バリデーションチェックの結果submitしない場合、return falseすることでsubmitを中止することができる。
+      return false;
+    }
+  });
 });
+$(function () {
+  $("#form_id2").submit(function () {
+    //
+    // バリデーションチェックや、データの加工を行う。
+    //
 
-$("#form_id2").submit(function () {
-  //
-  // バリデーションチェックや、データの加工を行う。
-  //
+    let error;
+    let value = $("#guest_mail").val();
+    if (value == "") {
+      error = true;
+    } else if (!value.match(/[0-9a-zA-Z]/)) {
+      error = true;
+    }
 
-  let error;
-  let value = $("#guest_mail").val();
-  if (value == "") {
-    error = true;
-  } else if (!value.match(/[0-9a-zA-Z]/)) {
-    error = true;
-  }
+    let value2 = $("#guest_password").val();
+    if (value2 == "") {
+      error = true;
+    } else if (!value2.match(/[0-9a-zA-Z]/)) {
+      error = true;
+    }
 
-  let value2 = $("#guest_password").val();
-  if (value2 == "") {
-    error = true;
-  } else if (!value2.match(/[0-9a-zA-Z]/)) {
-    error = true;
-  }
+    let value3 = $("#guest_name").val();
+    if (value3 == "") {
+      error = true;
+    }
 
-  let value3 = $("#guest_name").val();
-  if (value3 == "") {
-    error = true;
-  }
-
-  if (error) {
-    //エラー時の処理
-    //バリデーションチェックの結果submitしない場合、return falseすることでsubmitを中止することができる。
-    return false;
-  }
+    if (error) {
+      //エラー時の処理
+      //バリデーションチェックの結果submitしない場合、return falseすることでsubmitを中止することができる。
+      return false;
+    }
+  });
 });
