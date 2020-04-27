@@ -7,7 +7,8 @@ class TopsController < ApplicationController
     # ダミーデータ
     boo = Hotelday.order(days: :desc).limit(1)
     boo2 = boo.pluck(:days)
-    miniday2 = boo2[0]
+    miniday = boo2[0]
+    miniday2 = miniday + 1
     # miniday2 = if boo2[0] <= Date.today
     #             Date.today
     #           else
