@@ -15,9 +15,9 @@ class TopsController < ApplicationController
     #           end
 
     (1..15).each do |num|
-      hoteldays = Hotelday.new(hotel_id: num, bestvacant: rand(4), richvacant: rand(6), fourthvacant: rand(10), doublevacant: rand(10), days: miniday2.to_time)
+      hoteldays = Hotelday.new(hotel_id: num, bestvacant: rand(4), richvacant: rand(6), fourthvacant: rand(10), doublevacant: rand(10), days: miniday2)
       hoteldays.save
-      hotelprices = Hotelprice.new(hotel_id: num, bestprice: (rand(9) * 1000 + 40_000), richprice: (rand(9) * 1000 + 30_000), fourthprice: (rand(9) * 1000 + 20_000), doubleprice: (rand(9) * 1000 + 10_000), newday: miniday2.to_time)
+      hotelprices = Hotelprice.new(hotel_id: num, bestprice: (rand(9) * 1000 + 40_000), richprice: (rand(9) * 1000 + 30_000), fourthprice: (rand(9) * 1000 + 20_000), doubleprice: (rand(9) * 1000 + 10_000), newday: miniday2)
       hotelprices.save
     end
   end
