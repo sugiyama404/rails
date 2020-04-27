@@ -7,7 +7,11 @@ class TopsController < ApplicationController
     # ダミーデータ
     boo = Hotelday.order(days: :desc).limit(1)
     boo2 = boo.pluck(:days)
-    miniday2 = boo2[0].tomorrow
+    miniday2 = if Date.today >= boo2[0]
+                 Date.today
+               else
+                 boo2[0] + 1
+               end
 
     (1..15).each do |num|
       hoteldays = Hotelday.new(hotel_id: num, bestvacant: rand(4), richvacant: rand(6), fourthvacant: rand(10), doublevacant: rand(10), days: miniday2.to_time)
