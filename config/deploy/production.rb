@@ -56,7 +56,8 @@
 #     # password: "please use keys"
 #   }
 
-server '13.113.217.201', user: 'deploy', roles: %w[app db web]
+# server '13.113.217.201', user: 'deploy', roles: %w[app db web]
+server '54.178.208.137', user: 'deploy', roles: %w[app db web]
 
 set :ssh_options, {
   user: 'deploy',
