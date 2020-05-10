@@ -19,15 +19,56 @@
   <script>
     $(function() {
       $("#checkin").datepicker({
-        dateFormat: 'yy/mm/dd'
+        dateFormat: 'yy/mm/dd',
+        minDate:0
       });
       $("#checkout").datepicker({
-        dateFormat: 'yy/mm/dd'
+        dateFormat: 'yy/mm/dd',
+        minDate:1
       });
     });
     $(document).ready(function(){
       $('body').scrollspy({target: ".navbar", offset: 50});
     });
+    $(function() {
+      $('form').submit(function(){
+    
+        var cin  = $("#checkin").val();
+        var cout = $("#checkout").val();
+    
+        if(cout){
+          if(!cin){
+            var now = new Date(cout);
+            var yesterday = new Date(now.getFullYear(), now.getMonth(), now.getDate() - 1);
+            var rtn_str = getStringFromDate(yesterday);
+            $("#checkin").val(rtn_str);
+            $("#checkin").val();
+          }
+        }
+        if(cin){
+          if(!cout){
+            var now = new Date(cin);
+            var nextday = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+            var rtn_str = getStringFromDate(nextday);
+            $("#checkout").val(rtn_str);
+            $("#checkout").val();
+          }
+        }
+      });
+    });
+    
+    function getStringFromDate(date) {
+     var year_str = date.getFullYear();
+     //月だけ+1すること
+     var month_str = 1 + date.getMonth();
+     var day_str = date.getDate();
+    
+     format_str = 'YYYY/MM/DD';
+     format_str = format_str.replace(/YYYY/g, year_str);
+     format_str = format_str.replace(/MM/g, month_str);
+     format_str = format_str.replace(/DD/g, day_str);
+     return format_str;
+    };
   </script>
 </head>
 <body class="bodyA">

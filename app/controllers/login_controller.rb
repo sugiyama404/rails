@@ -29,10 +29,10 @@ class LoginController < ApplicationController
                        Date.today
                      end
     @confirm = Confirm.where(id: session[:hotel_id].to_i).where(days: session[:days])
-    if @confirm.present?
-    else
-      @confirm = Defaultconfirm.where(id: session[:hotel_id].to_i)
-    end
+    # if @confirm.present?
+    # else
+    #  @confirm = Defaultconfirm.where(id: session[:hotel_id].to_i)
+    # end
     @reserveds = Reserved.new
   end
 
