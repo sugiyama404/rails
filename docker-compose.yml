@@ -2,7 +2,6 @@ version: "3"
 services:
   db:
     image: mysql:5.7
-    command: mysqld --sql_mode=""
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: railsdatabase
@@ -16,5 +15,5 @@ services:
       - .:/sampleApp
     ports:
       - "3000:3000"
-    links:
+    depends_on:
       - db
