@@ -25,3 +25,7 @@
 
 # Ignore master key for decrypting credentials and more.
 # /config/master.key
+
+/GitKeyAdd.sh
+/memo.txt
+/AwsSshLogin.sh
