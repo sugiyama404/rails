@@ -12,7 +12,7 @@ class TopsController < ApplicationController
     miniday = boo2[0]
 
     day = Date.today
-    # 月初
+    # 月初日
     start_date = Date.new(day.year, day.month, 1)
     # 月末日
     end_date = start_date >> 1
