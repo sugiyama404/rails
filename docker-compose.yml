@@ -1,13 +1,19 @@
 version: "3"
 services:
   db:
+    build: ./docker/mysql
     image: mysql:5.7
     command: mysqld --sql_mode=
     environment:
       MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: railsdatabase
+      TZ: "Asia/Tokyo"
     ports:
       - "3306:3306"
+    volumes:
+      - ./docker/mysql/initdb.d:/docker-entrypoint-initdb.d
+      - ./docker/mysql/conf.d:/etc/mysql/conf.d
+      - ./log/mysql:/var/log/mysql
 
   web:
     build: .
