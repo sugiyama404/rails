@@ -1,0 +1,4 @@
+"id","email","encrypted_password","reset_password_token","reset_password_sent_at","remember_created_at","created_at","updated_at","admin","role_id"
+1,mnnnn@ddd,$2a$11$8sGkomlynwCU4dcRRxkvxuyoxxB4Tit5sWPm4T8p1cF0UZcNLnwAy,,,"2020-03-20 10:22:17.0","2020-02-11 11:58:00.0","2020-03-20 10:22:17.0",1,1
+2,ssss@ddddd,$2a$11$qpKDTBtf58OuseEy8kDX5OfN94oMPoDIZWP71B/RVDVwGcrtVVR1S,,,,"2020-02-11 05:11:19.0","2020-02-11 05:11:19.0",1,1
+3,ssss@dddddddd,$2a$11$HCQVy5cXzpPhTATo5xzXK.t0kz7ogTtdWrwWws02ALwFaLEOOp/rq,,,,"2020-02-11 05:12:22.0","2020-02-11 05:38:45.0",1,4
