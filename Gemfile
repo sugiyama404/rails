@@ -98,3 +98,6 @@ gem 'kaminari', '1.2.0'
 
 # 日付を使い安くする
 gem 'expanded_date', '0.2.1'
+
+# Scenic を使って、Railsで RDB の VIEWを使
+gem 'scenic', '1.5.2'
