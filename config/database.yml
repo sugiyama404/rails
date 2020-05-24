@@ -35,6 +35,7 @@ test:
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
+  #password: password
   password: ""
   host: 127.0.0.1
   #host: db
