@@ -94,7 +94,7 @@ gem 'rails_admin', '2.0.1'
 gem 'cancan', '1.6.10'
 
 # kaminariを使ってページネーションを作る
-gem 'kaminari', '1.2.0'
+gem 'kaminari', '1.2.1'
 
 # 日付を使い安くする
 gem 'expanded_date', '0.2.1'
