@@ -1,0 +1,59 @@
+#!/usr/bin/env bash
+
+# 最初に設定
+set -euo pipefail
+# ディレクトリとファイルを作る。
+function dircopy() {
+  mkdir work
+  touch ./work/test.txt
+}
+# ファイルに書き込む
+function writetext() {
+  echo '# pyenv' >>./work/test.txt
+}
+# ファイルに書き込む
+function text2() {
+  cat <<EOS >>./work/test.txt
+line1
+line2
+EOS
+}
+
+function myfunc() {
+  # 以下のようにコマンド実行した場合
+  # myfunc 100 200 "foo bar" 300
+  for i in "$@"; do echo $i; done
+}
+
+function myread() {
+  local cwd2
+  cwd2="$(cd "$(dirname "$0")" && cd ../ && pwd)"
+  pwd >>"${cwd2}"/work/test.txt
+  ls >>"${cwd2}"/work/test.txt
+  cp "${cwd2}"/work/test.txt "${cwd2}"/work/testcopy.txt
+}
+
+#
+# 引数parse処理
+#
+
+function usage() {
+  # パラメータの詳細を必ず明記すること
+  local cwd2
+  cwd2="$(cd "$(dirname "$0")" && cd ../ && pwd)"
+  cat <<EOS >>"${cwd2}"/work/test.txt
+Usage: $0 [-o OUTPUT_FILE] [-a] INPUT_FILE
+  INPUT_FILE      入力ファイル
+  -o OUTPUT_FILE  出力ファイル
+  -a              オプション。〜〜を〜〜として動作します
+EOS
+  exit 1
+}
+
+function makeerror() {
+  cat ./sonna_file_naiyo.txt
+}
+
+function noerror() {
+  echo "right!!!!"
+}
