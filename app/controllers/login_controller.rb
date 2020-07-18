@@ -22,6 +22,7 @@ class LoginController < ApplicationController
     end
   end
 
+
   def reserved
     session[:days] = if params[:selectdays].present?
                        params[:selectdays]
