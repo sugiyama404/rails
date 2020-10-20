@@ -6,7 +6,7 @@ class TopsController < ApplicationController
     require 'date'
     require 'expanded_date'
 
-    # ダミーデータ
+    # ダミーデータを追加、
     boo = Hotelday.order(days: :desc).limit(1)
     boo2 = boo.pluck(:days)
     miniday = boo2[0]
