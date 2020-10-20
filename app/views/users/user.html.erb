@@ -1,50 +1,64 @@
-<div class="row row-cols-1 row-cols-md-2">
-<% @hoteldays.each do |hotelday| %>
-<% @hotelprices.each do |hotelprice| %>
-<% if hotelday.hotel.id == hotelprice.hotel_id %>
-
+<div class="row row-cols-1 row-cols-md-2 mx-4">
+  <% @confirms.each do |hotel| %>
     <div class="col mb-4">
-  <div class="card">
-  <h3 class="text-center">ホテル名: <%= hotelday.hotel.name %></h3>
-    <div class="card-body">
-    <%= image_tag "/images/#{hotelday.hotel.imgname}.png", class: 'card-img-top' %>
-    <div class="card-footer">
-    <table class="table table-hover table-condensed">
-    <tr>
-    <th>残り部屋数</th>
-    <th>残り部屋数</th>
-    <th>値段</th>
-    <th>
-    <tr>
-     <td>ゴージャススーイト:</td>
-    <td><%= hotelday.best %> 部屋</td>
-    <td><%= hotelprice.best %> 円</td>
-    </tr>
-    <tr>
-    <td>スイート:</td>
-    <td><%= hotelday.rich %> 部屋</td>
-    <td><%= hotelprice.rich %> 円</td>
-    </tr>
-    <tr>
-    <td>マルチ:</td>
-    <td><%= hotelday.fourth %> 部屋</td>
-    <td><%= hotelprice.fourth %> 円</td>
-    </tr>
-    <tr>
-    <td>ダブル:</td>
-    <td><%= hotelday.double %> 部屋</td>
-    <td><%= hotelprice.double %> 円</td>
-    </tr>
-    </table>
-<%= link_to  "/users/#{hotelday.hotel.id}/login", class: 'btn btn-primary btn-lg btn-block' do %>
-  <i class="fas fa-suitcase-rolling"></i>
-  <span>予約する</span>
-<% end %>
+      <div class="card">
+        <h3 class="text-center alert alert-secondary"><%= hotel.name %></h3>
+        <div class="card-body">
+          <%= image_tag "/images/#{hotel.imgname}.png", class: 'card-img-top' %>
+          <div class="card-footer">
+            <table class="table table-hover table-condensed">
+              <tr>
+                <th>残り部屋数</th>
+                <th>残り部屋数</th>
+                <th>値段</th>
+              </tr>
+              <tr>
+                <td><%= hotel.bestname %>:</td>
+                <% if hotel.bestvacant == 0 %>
+                  <td>満室です</td>
+                <% else %>
+                  <td><%= hotel.bestvacant.to_i %> 部屋</td>
+                <% end %>
+                <td><%= hotel.bestprice.to_i %> 円</td>
+              </tr>
+              <tr>
+                <td><%= hotel.richname %>:</td>
+                <% if hotel.richvacant == 0 %>
+                  <td>満室です</td>
+                <% else %>
+                  <td><%= hotel.richvacant.to_i %> 部屋</td>
+                <% end %>
+                <td><%= hotel.richprice.to_i %> 円</td>
+              </tr>
+              <tr>
+                <td><%= hotel.fourthname %>:</td>
+                <% if hotel.fourthvacant == 0 %>
+                  <td>満室です</td>
+                <% else %>
+                  <td><%= hotel.fourthvacant.to_i %> 部屋</td>
+                <% end %>
+                <td><%= hotel.fourthprice.to_i %> 円</td>
+              </tr>
+              <tr>
+                <td><%= hotel.doublename %>:</td>
+                <% if hotel.doublevacant == 0 %>
+                  <td>満室です</td>
+                <% else %>
+                  <td><%= hotel.doublevacant.to_i %> 部屋</td>
+                <% end %>
+                <td><%= hotel.doubleprice.to_i %> 円</td>
+              </tr>
+            </table>
+            <%= link_to  "/users/#{hotel.id}/login", class: 'btn btn-primary btn-lg btn-block' do %>
+              <i class="fas fa-suitcase-rolling"></i>
+              <span>予約する</span>
+            <% end %>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
- </div>
- </div>
- <% end %>
-<% end %>
   <% end %>
-  </div>
+</div>
+<div class="mx-auto" style="width: 500px;">
+  <%= paginate @confirms %>
+</div>

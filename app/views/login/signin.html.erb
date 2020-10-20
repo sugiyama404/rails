@@ -1,35 +1,51 @@
 <div align="center" class="my-4">
-  <div class="card text-white bg-primary mb-3" style="max-width: 30rem;" align="center">
-    <div class="card-header">signin</div>
-    <div class="card-body">
-      <%= form_for @guest, url: "/users/create", method: :post do |f| %>
+  <div class="card border-primary cardmb-3" style="max-width: 30rem;" align="center">
+    <div class="card-header text-white bg-primary">signin</div>
+    <%= form_for @guest, html: { id: :form_id2}, url: "/users/create", method: :post do |f| %>
+      <div class="card-body text-dark">
         <div class="form-group row">
           <%= f.label :name, class:'col-sm-4'%>
           <div class="col-sm-2">
-            <%= f.text_field :name, class:'form_control' %>
+            <%= f.text_field :name, class:'form-control require logoinform', required: true %>
+            <div class="invalid-feedback logoinform">
+              名前が無効です。
+            </div>
           </div>
         </div>
         <div class="form-group row">
           <%= f.label :mail, class:'col-sm-4' %>
           <div class="col-sm-2">
-            <%= f.email_field :mail, class:'form_control' %>
+            <%= f.email_field :mail, class:'form-control require logoinform', required: true %>
+            <div class="invalid-feedback logoinform">
+              メールアドレスが無効です。
+            </div>
           </div>
         </div>
         <div class="form-group row">
           <%= f.label :password, class:'col-sm-4' %>
           <div class="col-sm-2">
-            <%= f.password_field :password, class:'form_control' %>
+            <%= f.password_field :password, class:'form-control require logoinform', required: true %>
+            <div class="invalid-feedback logoinform">
+              パスワードが無効です。
+            </div>
           </div>
         </div>
         <div class="form-group row">
           <%= f.label :password_confirmation, "Confirmation", class:'col-sm-4' %>
           <div class="col-sm-2">
-            <%= f.password_field :password_confirmation, class:'form_control' %>
+            <%= f.password_field :password_confirmation, class:'form-control require logoinform', required: true %>
+            <div class="invalid-feedback logoinform">
+              パスワードが無効です。
+            </div>
           </div>
         </div>
-        <button type="button" class="btn btn-outline-light btn-lg" onClick="location.href='/users'">戻る</button>
-        <%= f.submit "登録", class: "btn btn-outline-light btn-lg" %>
-      <% end %>
-    </div>
+      </div>
+      <div class="card-footer border-primary  bg-light">
+        <button type="button" class="tn btn-outline-primary btn-lg" onClick="location.href='/users/search'">戻る</button>
+        <div class="float-left">
+          <%= f.submit "登録", class: "btn btn-outline-primary btn-lg" %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

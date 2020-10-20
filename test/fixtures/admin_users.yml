@@ -5,7 +5,9 @@
 # below each fixture, per the syntax in the comments below
 #
 one: {}
+# email: MyString@ddd
+#encrypted_password: aaa
 # column: value
 #
-two: {}
+#two: {}
 # column: value

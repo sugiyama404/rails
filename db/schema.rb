@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_200_301_003_050) do
+ActiveRecord::Schema.define(version: 20_200_523_073_635) do
   create_table 'admin_users', options: 'ENGINE=InnoDB DEFAULT CHARSET=utf8', force: :cascade do |t|
     t.string 'email', default: '', null: false
     t.string 'encrypted_password', default: '', null: false
@@ -33,10 +33,10 @@ ActiveRecord::Schema.define(version: 20_200_301_003_050) do
 
   create_table 'hoteldays', options: 'ENGINE=InnoDB DEFAULT CHARSET=utf8', force: :cascade do |t|
     t.integer 'hotel_id'
-    t.integer 'best'
-    t.integer 'rich'
-    t.integer 'fourth'
-    t.integer 'double'
+    t.integer 'bestvacant'
+    t.integer 'richvacant'
+    t.integer 'fourthvacant'
+    t.integer 'doublevacant'
     t.date 'days'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
@@ -44,10 +44,10 @@ ActiveRecord::Schema.define(version: 20_200_301_003_050) do
 
   create_table 'hotelprices', options: 'ENGINE=InnoDB DEFAULT CHARSET=utf8', force: :cascade do |t|
     t.integer 'hotel_id'
-    t.integer 'best'
-    t.integer 'rich'
-    t.integer 'fourth'
-    t.integer 'double'
+    t.integer 'bestprice'
+    t.integer 'richprice'
+    t.integer 'fourthprice'
+    t.integer 'doubleprice'
     t.date 'newday'
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
@@ -55,6 +55,10 @@ ActiveRecord::Schema.define(version: 20_200_301_003_050) do
 
   create_table 'hotels', options: 'ENGINE=InnoDB DEFAULT CHARSET=utf8', force: :cascade do |t|
     t.string 'name'
+    t.string 'bestname'
+    t.string 'richname'
+    t.string 'fourthname'
+    t.string 'doublename'
     t.string 'mails'
     t.text 'address'
     t.string 'imgname'
