@@ -89,7 +89,7 @@ gem 'capistrano-rbenv'
 # RailsAdminは、管理画面にアクセスする管理者の管理にDeviseを利用しています
 gem 'devise', '4.7.1'
 # さて、ここからRailsAdminのインストールです
-gem 'rails_admin', '2.0.1'
+gem 'rails_admin', '2.0.2'
 # cancan
 gem 'cancan', '1.6.10'
 
